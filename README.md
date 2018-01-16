@@ -26,10 +26,10 @@ Pour programmer la tondeuse, on lui fournit un fichier d'entrée construit comme
 * La première ligne correspond aux coordonnées du coin supérieur droit de la pelouse, celles du coin inférieur gauche sont supposées être (0,0)
 * La  suite  du  fichier  permet  de  piloter  toutes  les  tondeuses  qui  ont  été  déployées.  Chaque 
 tondeuse a deux lignes la concernant :
-  ** la première ligne donne la position initiale de la tondeuse, ainsi que son orientation. La 
+  * la première ligne donne la position initiale de la tondeuse, ainsi que son orientation. La 
 position et l'orientation sont fournies sous la forme de 2 chiffres et une lettre, séparés 
 par un espace
-  ** la  seconde  ligne  est  une  série  d'instructions  ordonnant  à  la  tondeuse  d'explorer  la pelouse. Les instructions sont une suite de caractères sans espaces.
+  * la  seconde  ligne  est  une  série  d'instructions  ordonnant  à  la  tondeuse  d'explorer  la pelouse. Les instructions sont une suite de caractères sans espaces.
 
 Chaque tondeuse se déplace de façon séquentielle, ce qui signifie que la seconde tondeuse ne 
 bouge que lorsque la première a exécuté intégralement sa série d'instructions.
@@ -41,16 +41,16 @@ OBJECTIF
 Concevoir  et  écrire  un  programme  s'exécutant  sur  une  JVM  ≥  1.7  ou  un  serveur  node.js,  et 
 implémentant la spécification ci­dessus et passant le test ci­après
 
-`TEST
-Le fichier suivant est fourni en entrée :
-5 5
-1 2 N
-GAGAGAGAA
-3 3 E
-AADAADADDA
-On attend le résultat suivant (position finale des tondeuses) :
-1 3 N
-5 1 E`
+`TEST`
+`Le fichier suivant est fourni en entrée :`
+`5 5`
+`1 2 N`
+`GAGAGAGAA`
+`3 3 E`
+`AADAADADDA`
+`On attend le résultat suivant (position finale des tondeuses) :`
+`1 3 N`
+`5 1 E`
 
 NB:  Les  données  en  entrée  peuvent  être  injectée  sous  une  autre  forme  qu'un  fichier  (par 
 exemple un test automatisé). 
