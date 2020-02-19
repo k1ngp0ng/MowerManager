@@ -24,6 +24,19 @@ public class Position {
 		this.direction = direction;
 	}
 
+	public Position executeAction(Action action) {
+		switch (action) {
+			case D:
+				return new Position(getX(), getY(), getDirection().turnRight());
+			case G:
+				return new Position(getX(), getY(), getDirection().turnLeft());
+			case A:
+				return moveForward();
+			default:
+				throw new IllegalActionException(action);
+		}
+	}
+
 	private Position moveForward() {
 		switch (direction) {
 			case NORTH:
@@ -36,19 +49,6 @@ public class Position {
 				return new Position(getX() - 1, getY(), Direction.WEST);
 			default:
 				throw new IllegalArgumentException("Unknown direction " + direction);
-		}
-	}
-
-	public Position executeAction(Action action) {
-		switch (action) {
-			case D:
-				return new Position(getX(), getY(), getDirection().turnRight());
-			case G:
-				return new Position(getX(), getY(), getDirection().turnLeft());
-			case A:
-				return moveForward();
-			default:
-				throw new IllegalActionException(action);
 		}
 	}
 
@@ -75,7 +75,7 @@ public class Position {
 
 	@Override
 	public String toString() {
-		return String.format("[x=%s, X=%s, direction=%s]", x, y, direction);
+		return String.format("[x=%s, y=%s, direction=%s]", x, y, direction);
 	}
 
 }

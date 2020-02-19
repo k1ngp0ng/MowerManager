@@ -10,13 +10,6 @@ public class Field {
 	// hauteur du terrain, axe des ordonnées
 	private Integer height;
 	
-	public Integer getLength() {
-		return length;
-	}
-	public Integer getHeight() {
-		return height;
-	}
-	
 	public Field(Integer length, Integer height) {
 		if (length == null || height == null) {
 			throw new IllegalArgumentException("Length or height can't be null");

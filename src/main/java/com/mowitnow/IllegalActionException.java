@@ -5,10 +5,6 @@ package com.mowitnow;
  */
 public class IllegalActionException extends RuntimeException {
 
-    public IllegalActionException() {
-        super();
-    }
-
     public IllegalActionException(Action action) {
         this("unknown action : " +  action);
     }
@@ -17,7 +13,4 @@ public class IllegalActionException extends RuntimeException {
         super(message);
     }
 
-    public IllegalActionException(String message, Throwable cause) {
-        super(message, cause);
-    }
 }

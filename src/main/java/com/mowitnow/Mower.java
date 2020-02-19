@@ -10,16 +10,8 @@ public class Mower {
     private Position currentPosition;
     private Instructions instructions;
 
-    public Field getField() {
-        return field;
-    }
-
     public Position getCurrentPosition() {
         return currentPosition;
-    }
-
-    public Instructions getInstructions() {
-        return instructions;
     }
 
     public Mower(Field field, Position initialPosition, Instructions instructions) {
@@ -39,11 +31,11 @@ public class Mower {
         for (Action action : instructions.getActions()) {
             System.out.println(String.format("Executing action '%s'", action.getLibelle()));
             newPosition = currentPosition.executeAction(action);
-            if (Action.A.equals(action) && !field.isInsideField(newPosition)) {
-                    System.out.println(String.format("Action '%s' cannot be executed because the result is out of field with position %s", action, newPosition));
+            if (field.isInsideField(newPosition)) {
+                currentPosition = newPosition;
             }
             else {
-                currentPosition = newPosition;
+                System.out.println(String.format("Action '%s' cannot be executed because the result is out of field with position %s", action, newPosition));
             }
         }
         return currentPosition;

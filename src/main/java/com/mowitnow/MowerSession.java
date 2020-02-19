@@ -10,10 +10,6 @@ public class MowerSession {
 
     private List<Mower> mowers;
 
-    public MowerSession(List<Mower> mowers) {
-        this.mowers = mowers;
-    }
-
     public MowerSession() {
         this.mowers = new ArrayList<>();
     }

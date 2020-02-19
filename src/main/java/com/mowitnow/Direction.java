@@ -26,12 +26,8 @@ public enum Direction {
 	static
 	{
 		for (Direction direction : Direction.values()) {
-			lookUpMap.put(direction.getAngle(), direction);
+			lookUpMap.put(direction.angle, direction);
 		}
-	}
-
-	public Integer getAngle() {
-		return angle;
 	}
 	
 	Direction(Integer angle) {
